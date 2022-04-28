@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{% static 'expense/css/bootstrap.min.css '  %}">
+
+
+  <style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+
+</head>
+
+
+</head>
+<body>
+
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Expense Tracker</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="{% url 'session' %}">Sign out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="{% url 'user_dash'%}">
+                <span data-feather="home"></span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_cat'%}">
+                <span data-feather="file"></span>
+                Add Category
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_exp'%}">
+                <span data-feather="shopping-cart"></span>
+                Add Expenses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'view_exp'%}">
+                <span data-feather="users"></span>
+                View Expenses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'history' %}">
+                <span data-feather="bar-chart-2"></span>
+                Historical Expense
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Spending Trends
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'help_supp' %}">
+                <span data-feather="layers"></span>
+                Help and Support
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Profile Setting
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">View Expense</h1>      
+        </div>
+
+
+        <div class="row mb-4">
+          <div class="col">
+            <h6>Maximum Spent: {{ high.exp_expense }}$</h6>
+            <h6>Minimum Spent: {{ min.exp_expense }}$</h6>
+            <h6>Average Spent: {{ average }}$</h6>
+          
+  </div>
+</div>
+<p class="text-center"> The Table Below contains all the transactions made ever.</p>
+
+        <div class="row">
+          <div class="col-10 mx-auto pl-5">
+
+
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">$</th>
+        <th scope="col">Date</th>
+        <th scope="col">Details</th>
+        
+
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in exp %}
+      <tr>
+        <th scope="row">{{ forloop.counter}}</th>
+        <td>{{ i.product_name}}</td>
+        <td>{{ i.exp_category.cat_name }}</td>
+        <td>{{ i.exp_expense }}$</td>
+        <td>{{ i.exp_time }}</td>
+        <td>{{ i.exp_desc }}</td>
+        
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+  </table>  
+</div>
+</div>
+
+</main>
+
+<script type="text/javascript" src="{% static 'expense/js/jquery.js'%}"></script>
+<script type="text/javascript" src="{% static 'expense/js/popper.js'%}"></script>
+<script type="text/javascript" src="{% static 'expense/js/bootstrap.min.js'%}"></script>
+
+</body>
+</html>
