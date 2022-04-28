@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'expense/css/bootstrap.min.css '  %}">
+
+
+  <style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+
+</head>
+
+
+</head>
+<body>
+    {% if messages %}
+
+    {% for message in messages %}
+    <div class="alert alert-primary" role="alert">
+  {{ message }}
+</div>  
+    {% endfor %}
+
+{% endif %}
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <h1 class="h1">Expense Tracker</h1>
+      </div>
+    </div>
+  <div class="row mt-5">
+
+    <div class="col-5 mx-auto border bg-light text-center">
+      <h1 class='h2 pt-3'>Registration Form</h1>
+      <hr>
+      <div class="">
+        <form method="post" action="" class="form text-start">
+          {% csrf_token %}
+
+          <label class="h5">Username:</label>
+          <div class="mb-3">
+            <input type="text" name="uname" class="form-control">
+          </div>
+
+          <label class="h5">Email:</label>
+          <div class="mb-3">
+            <input type="email" name="uemail" class="form-control">
+          </div>
+
+          <label class="h5">Password:</label>
+          <div class="mb-3">
+            <input type="password" name="upass" class="form-control">
+          </div>
+
+          <div class="text-end mb-5">
+            <input type="submit" name="Register" class="btn btn-primary  btn-block ">
+
+            <a href="{% url 'user_login'  %}" class="text-primary" style="display:block">Already have an account?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="{% static 'expense/js/jquery.js'%}"></script>
+  <script type="text/javascript" src="{% static 'expense/js/popper.js'%}"></script>
+  <script type="text/javascript" src="{% static 'expense/js/bootstrap.min.js'%}"></script>
+
+</body>
+</html>
