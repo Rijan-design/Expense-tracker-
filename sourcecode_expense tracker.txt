@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/expense/css/bootstrap.min.css%20">
+  <link rel="stylesheet" type="text/css" href="/static/expense/css/style.css%20">
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+</head>
+<body>
+
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Expense Tracker</a>
+    <h1 class="h3 text-light text-start">
+      subash
+    </h1>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="/logout">Sign out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">
+                <span data-feather="home"></span>
+                <i class="fa fa-thin fa-gauge me-2"></i>Dashboard 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/addCategory">
+                <span data-feather="file"></span>
+                <i class="fa fa-thin fa-list me-2"></i>Add Category
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/addExpense/">
+                <span data-feather="shopping-cart"></span>
+               <i class="fa fa-thin fa-dollar-sign me-2"></i>Add Expenses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewExpense">
+                <span data-feather="users"></span>
+                <i class="fa fa-thin fa-eye me-2"></i>View Expenses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/historicalExpense">
+                <span data-feather="bar-chart-2"></span>
+                <i class="fa fa-thin fa-clock-rotate-left me-2"></i>Historical Expense
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/spendTrends/">
+                <span data-feather="layers"></span>
+              <i class="fa fa-thin fa-chart-column me-2"></i>Spending Trends/Insights             
+               </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/addNotes/">
+              <span data-feather="layers"></span>
+              <i class="fa fa-thin fa-note-sticky me-2"></i>Notes
+            </a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/helpAndSupport">
+                <span data-feather="layers"></span>
+                <i class="fa fa-thin fa-handshake-angle me-2"></i>Help and Support
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/editProfile/">
+                <span data-feather="layers"></span>
+                <i class="fa fa-thin fa-screwdriver-wrench me-2"></i>Profile Setting
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard</h1>
+
+        </div>
+        <div class="row">
+          <div class="col-3">
+            
+            
+            
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Current Month's Expense</div>
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-size:36px">
+                  
+                </h5>
+                
+              </div>
+            </div>  
+          </div>
+          <div class="col-3">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Total Expense so far</div>
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-size:36px">
+
+                  
+                70$</h5>
+
+                
+              </div>
+            </div>          
+          </div>
+          
+          <div class="col-3">
+            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+              <div class="card-header">Total No of Transactions</div>
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-size:36px">
+                  
+                  2
+                  
+                </h5>
+                
+              </div>
+            </div>
+          </div>  
+          <div class="col-3">
+            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">Max/Min/Average</div>
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-size:26px">
+                  
+                  50$ / 20$ / 35.0$
+                  
+                </h5>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="row mt-5">
+          <div class="col-5 ">
+
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">#</th>
+                  <th scope="col">Month</th>
+                  <th scope="col">No of Transactions</th>
+
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                
+                <tr>
+                  <th scope="row">1</th>
+                  <td>May 1, 2022</td>
+                  <td>2</td>
+
+                </tr>
+
+                
+
+              </tbody>
+            </table>  
+
+          </div>
+        </div>
+        
+
+
+
+      </main>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript" src="/static/expense/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/expense/js/popper.js"></script>
+  <script type="text/javascript" src="/static/expense/js/bootstrap.min.js"></script>
+
+</body>
+</html>
